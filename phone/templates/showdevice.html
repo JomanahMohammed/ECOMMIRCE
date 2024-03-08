@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Show Phone </title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+    {% block content %} 
+    <div class="container "> 
+        {% for item in Device %}
+    <div class="row mt-4 text-center d-flex justify-content-center">
+      <div class="col-sm-7">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <img src="../static/image/{{item.image}}" class="img-thumbnail border border-4" >
+
+              </div>
+              <div class="col-sm-8">
+
+                <ul class="list-unstyled ">
+                  <li class="alert alert-info border border-2"> Name: {{item.itemsid.name}}</li>
+                  <li class="alert alert-warning border border-2">Price: {{item.price}} SAR</li>
+                  <!-- <li class="alert alert-success">Quantity: {{item.qty}}</li>
+                  <li class="alert alert-success">Tax: {{item.tax}}</li>
+                  <li class="alert alert-success">Total:{{item.tax}} SAR</li>
+                  <li class="alert alert-success">Model: {{item.itemsid.name}}</li> -->
+                  <a href="{% url 'Device' id=item.id %}" class="btn btn-outline-danger text-center mt-3" > Devices Details </a>
+
+                </ul>
+         
+            </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    {% endfor %}
+    
+    </div>
+    {% endblock %}
+
+</body>
+</html>

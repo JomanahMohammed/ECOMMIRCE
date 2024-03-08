@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% block content %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page </title>
+    <style>
+      body{
+        background: url('https://e0.pxfuel.com/wallpapers/23/549/desktop-wallpaper-blue-color-gradient-1-data-id-navy-blue-gradient-background-dark-color-gradient.jpg')  ;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 100%;
+        width: 100%;
+       }
+       a{
+        color: #f1f1f1;
+        
+       }
+       a:hover{
+        color: rgb(231, 248, 75);
+       }
+       .container{
+        margin-top: 85px;
+        
+       
+       }
+       .card-body{
+        border: #f1f1f1 double 5px;
+        padding: 30px;
+        text-align: center;
+        
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center d-flex justify-content-center mt-5 mb-5">
+             <div class="col-sm-3">
+              <a href="{% url 'showphone' %}" style="text-decoration:none;">
+                <div class="card">
+                    <div class="card-body" style="background-color: #054c04;">
+                        <i class="bi bi-phone text-center" style="font-size: 60px;"></i>
+                            <h3>Smart Phones </h3>
+                    </div>
+                </div>
+              </a>
+             </div>
+
+             <div class="col-sm-3">
+                <a href="{% url 'showdevice' %}"  style="text-decoration:none;">
+                <div class="card">
+                    <div class="card-body" style="background-color: rgb(15, 0, 151);">
+                        <i class="bi bi-house text-center" style="font-size: 60px;"></i>
+                            <h3> Electrical Devices  </h3>
+                    </div>
+                </div>
+                </a>
+             </div>
+             
+        </div>
+
+
+            
+       </div>
+    </div>
+</body>
+ 
+{% endblock %}

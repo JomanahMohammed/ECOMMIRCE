@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in Device %}
+<div class="card mt-5">
+    <div class="card-body m-4">
+      <div class="container">
+        <p class="my-2 mx-2" style="font-size: 30px;">Thank for your purchase</p>
+        <div class="row">
+          <ul class="list-unstyled">
+            <li class="text-muted mt-1"><span class="text-black">Invoice</span> # {{item.itemsid.id}}</li>
+            <li class="text-black mt-1"> {{item.date}} </li>
+          </ul>
+          <hr>
+          <div class="col-xl-10">
+            <p>{{item.itemsid.name}}</p>
+          </div>
+          <div class="col-xl-2">
+            <p class="float-end"> {{item.price}}
+            </p>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-xl-10">
+            <p>tax</p>
+          </div>
+          <div class="col-xl-2">
+            <p class="float-end">{{item.tax}}
+            </p>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-xl-10">
+            <p>Quantity</p>
+          </div>
+          <div class="col-xl-2">
+            <p class="float-end">{{item.qty}}
+            </p>
+          </div>
+          <hr style="border: 2px solid black;">
+        </div>
+        <div class="row text-black">
+  
+          <div class="col-xl-12">
+            <p class="float-end fw-bold">Total: {{item.total}}
+            </p>
+          </div>
+          <hr style="border: 2px solid black;">
+        </div>
+
+  
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  {% endblock %}
